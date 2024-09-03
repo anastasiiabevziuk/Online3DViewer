@@ -239,10 +239,10 @@ export class MeasureTool
             let calcResult = CalculateMarkerValues (this.markers[0], this.markers[1]);
 
             if (calcResult.pointsDistance !== null) {
-                AddValue (this.panel, 'measure_distance', 'Distance of points', calcResult.pointsDistance.toFixed (3));
+                AddValue (this.panel, 'measure_distance', 'Distance of points', (calcResult.pointsDistance * 100).toFixed(2) + 'cm');
             }
             if (calcResult.parallelFacesDistance !== null) {
-                AddValue (this.panel, 'measure_distance_parallel', 'Distance of parallel faces', calcResult.parallelFacesDistance.toFixed (3));
+                AddValue (this.panel, 'measure_distance_parallel', 'Distance of parallel faces', (calcResult.parallelFacesDistance* 100).toFixed(2) + 'cm');
             }
             if (calcResult.facesAngle !== null) {
                 let degreeValue = calcResult.facesAngle * RadDeg;
